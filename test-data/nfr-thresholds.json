@@ -1,0 +1,18 @@
+{
+  "NFR-01": {
+    "metric": "Response time of common operations: search (POST /teams/{id}/posts/search) and open channel (GET channel + GET latest 60 posts)",
+    "workload": { "virtual_users": 5, "iterations_per_user": 10, "seed_posts": 20 },
+    "search_p95_ms_max": 1000,
+    "open_channel_p95_ms_max": 1000,
+    "error_rate_max": 0
+  },
+  "NFR-02": {
+    "metric": "Share of unauthorized requests denied (non-member, removed member, regular user on admin operations, no/forged session)",
+    "denied_pct_min": 100
+  },
+  "NFR-03": {
+    "metric": "Critical axe-core WCAG 2.x A/AA violations on sign-up, login and channel view; median time to open a channel and send a message",
+    "max_critical": 0,
+    "task_median_ms_max": 5000
+  }
+}

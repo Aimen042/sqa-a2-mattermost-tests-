@@ -1,0 +1,446 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/share/nvm/versions/node/v24.22.2/bin/node",
+      "/workspaces/sqa-a2-mattermost-tests-/node_modules/.bin/playwright",
+      "test",
+      "--grep",
+      "@fr05|@e2e"
+    ],
+    "configFile": "/workspaces/sqa-a2-mattermost-tests-/playwright.config.ts",
+    "rootDir": "/workspaces/sqa-a2-mattermost-tests-/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "/workspaces/sqa-a2-mattermost-tests-/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspaces/sqa-a2-mattermost-tests-/reports/regression-after/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/workspaces/sqa-a2-mattermost-tests-/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspaces/sqa-a2-mattermost-tests-/reports/regression-after/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/workspaces/sqa-a2-mattermost-tests-/tests",
+        "snapshotDir": "/workspaces/sqa-a2-mattermost-tests-/tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://localhost:8065",
+          "screenshot": "on",
+          "video": "retain-on-failure",
+          "trace": "retain-on-failure",
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "actionTimeout": 15000,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.8154.6 Safari/537.36",
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "reports/regression-after/html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/regression-after/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "reports/regression-after/junit.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "e2e/e2e-critical-workflow.spec.ts",
+      "file": "e2e/e2e-critical-workflow.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "E2E-01 Critical workflow: send a message in a private channel (login -> open -> send -> view -> search/reply) @e2e @fr05",
+          "ok": true,
+          "tags": [
+            "e2e",
+            "fr05"
+          ],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [
+                {
+                  "type": "requirement",
+                  "description": "FR-01, FR-02, FR-03, FR-04, FR-05 (+NFR-02)"
+                },
+                {
+                  "type": "owner",
+                  "description": "Aimen, Bakhtawar, Muhammad Huzaifa"
+                },
+                {
+                  "type": "technique",
+                  "description": "End-to-end scenario (A1 critical workflow)"
+                },
+                {
+                  "type": "inputs",
+                  "description": "keyword=e2emwrji5dx2uxmu; file=e2e-e2emwrji5dx2uxmu.txt"
+                },
+                {
+                  "type": "actual",
+                  "description": "All steps passed: channel qa-e2e-mwrji5iwvb25, post qoehgktk9j8fi8nfg19ps7ptjo viewed by member, found by search, replied (thread of 2), non-member denied"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16652,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "0. Precondition: private channel exists and Bob is a member (Module C)",
+                      "duration": 42
+                    },
+                    {
+                      "title": "1. Alice logs in (Module A)",
+                      "duration": 4889
+                    },
+                    {
+                      "title": "2. Alice opens the private channel (Module C)",
+                      "duration": 2113
+                    },
+                    {
+                      "title": "3-5. Alice attaches a file, enters and sends a message; it is displayed (Modules B + C)",
+                      "duration": 748
+                    },
+                    {
+                      "title": "6. Bob (authorized member) logs in and views the message (Modules A + B)",
+                      "duration": 7619
+                    },
+                    {
+                      "title": "7. Bob searches the message, downloads the file and replies (Modules B + C)",
+                      "duration": 51
+                    },
+                    {
+                      "title": "8. Eve (non-member) cannot open, read or find it (Module C / NFR-02)",
+                      "duration": 193
+                    }
+                  ],
+                  "startTime": "2026-11-22T07:53:11.009Z",
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-01, FR-02, FR-03, FR-04, FR-05 (+NFR-02)"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Aimen, Bakhtawar, Muhammad Huzaifa"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "End-to-end scenario (A1 critical workflow)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "keyword=e2emwrji5dx2uxmu; file=e2e-e2emwrji5dx2uxmu.txt"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "All steps passed: channel qa-e2e-mwrji5iwvb25, post qoehgktk9j8fi8nfg19ps7ptjo viewed by member, found by search, replied (thread of 2), non-member denied"
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "e2e-step5-alice-sent",
+                      "contentType": "image/png",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/regression-after/artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/attachments/e2e-step5-alice-sent-f5a413dabc481313e4dd2e85dff5fc0663494539.png"
+                    },
+                    {
+                      "name": "e2e-step6-bob-views",
+                      "contentType": "image/png",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/regression-after/artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/attachments/e2e-step6-bob-views-02f6b68c4369959d8d96694e67787d4323dcabbb.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/regression-after/artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/test-finished-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/regression-after/artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/test-finished-2.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "edc6ed93fd7063c77372-bacb639dae740dec2c8b",
+          "file": "e2e/e2e-critical-workflow.spec.ts",
+          "line": 17,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "module-c-channels-files.spec.ts",
+      "file": "module-c-channels-files.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Module C - Channels & File Sharing",
+          "file": "module-c-channels-files.spec.ts",
+          "line": 14,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-C03 [FR-05][BVA] File size: exactly max accepted, max+1 byte rejected @fr05 @memberC",
+              "ok": true,
+              "tags": [
+                "fr05",
+                "memberC"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-05"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Muhammad Huzaifa (Member 3)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "BVA - max (2097152 B) and max+1 (2097153 B)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "binary files of 2097152 and 2097153 bytes"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "MaxFileSize=2097152; 2097152 B -> HTTP 201; 2097153 B -> HTTP 413 api.file.upload_file.too_large_detailed.app_error"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 243,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:53:27.785Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-05"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Muhammad Huzaifa (Member 3)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "BVA - max (2097152 B) and max+1 (2097153 B)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "binary files of 2097152 and 2097153 bytes"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "MaxFileSize=2097152; 2097152 B -> HTTP 201; 2097153 B -> HTTP 413 api.file.upload_file.too_large_detailed.app_error"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d825962a5694532510ee-62b4fea555437cbffa1f",
+              "file": "module-c-channels-files.spec.ts",
+              "line": 54,
+              "column": 3
+            },
+            {
+              "title": "TC-C04 [FR-05][EP-valid] File attached to a message is downloaded unchanged by another member @fr05 @memberC",
+              "ok": true,
+              "tags": [
+                "fr05",
+                "memberC"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-05"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Muhammad Huzaifa (Member 3)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "EP - valid partition (supported file within size limit)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "notes.txt (42 B)"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "Upload 201 (42 B), post 201 with file id, member sees name \"notes.txt\" and downloads identical content (200)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 303,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:53:28.040Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-05"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Muhammad Huzaifa (Member 3)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "EP - valid partition (supported file within size limit)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "notes.txt (42 B)"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "Upload 201 (42 B), post 201 with file id, member sees name \"notes.txt\" and downloads identical content (200)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d825962a5694532510ee-2334aa07bd6ff77b5120",
+              "file": "module-c-channels-files.spec.ts",
+              "line": 71,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-22T07:53:09.305Z",
+    "duration": 19176.467,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "id": "NFR-02",
+  "metric": "Share of unauthorized requests denied (non-member, removed member, regular user on admin operations, no/forged session)",
+  "conditions": {
+    "probes": 22,
+    "removed_member_probed_within_ms": 34,
+    "server": "http://localhost:8065",
+    "version": "12.1.0.41996731193.7337e8f919c726baa6bf959421b0789e5e103f057bf54b62d758713279bcc8e1.false"
+  },
+  "threshold": {
+    "denied_pct_min": 100
+  },
+  "measured": {
+    "denied": 22,
+    "total": 22,
+    "denied_pct": 100
+  },
+  "details": [
+    {
+      "group": "G1 non-member (eve)",
+      "check": "GET channel (direct link)",
+      "status": 403,
+      "denied": true
+    },
+    {
+      "group": "G1 non-member (eve)",
+      "check": "GET channel posts",
+      "status": 403,
+      "denied": true
+    },
+    {
+      "group": "G1 non-member (eve)",
+      "check": "GET single post by id",
+      "status": 403,
+      "denied": true
+    },
+    {
+      "group": "G1 non-member (eve)",
+      "check": "Download attached file",
+      "status": 403,
+      "denied": true
+    },
+    {
+      "group": "G1 non-member (eve)",
+      "check": "POST message into channel",
+      "status": 403,
+      "denied": true
+    },
+    {
+      "group": "G1 non-member (eve)",
+      "check": "Search for channel keyword",
+      "status": "0 results",
+      "denied": true
+    },
+    {
+      "group": "G2 removed member (bob)",
+      "check": "GET channel (direct link)",
+      "status": 403,
+      "denied": true
+    },
+    {
+      "group": "G2 removed member (bob)",
+      "check": "GET channel posts",
+      "status": 403,
+      "denied": true
+    },
+    {
+      "group": "G2 removed member (bob)",
+      "check": "GET single post by id",
+      "status": 403,
+      "denied": true
+    },
+    {
+      "group": "G2 removed member (bob)",
+      "check": "Download attached file",
+      "status": 403,
+      "denied": true
+    },
+    {
+      "group": "G2 removed member (bob)",
+      "check": "POST message into channel",
+      "status": 403,
+      "denied": true
+    },
+    {
+      "group": "G2 removed member (bob)",
+      "check": "Search for channel keyword",
+      "status": "0 results",
+      "denied": true
+    },
+    {
+      "group": "G3 regular user -> privileged op",
+      "check": "GET server config",
+      "status": 403,
+      "denied": true
+    },
+    {
+      "group": "G3 regular user -> privileged op",
+      "check": "PATCH server config",
+      "status": 403,
+      "denied": true
+    },
+    {
+      "group": "G3 regular user -> privileged op",
+      "check": "Deactivate another user",
+      "status": 403,
+      "denied": true
+    },
+    {
+      "group": "G3 regular user -> privileged op",
+      "check": "Delete private channel not a member of",
+      "status": 403,
+      "denied": true
+    },
+    {
+      "group": "G4 no session",
+      "check": "GET /api/v4/users/me",
+      "status": 401,
+      "denied": true
+    },
+    {
+      "group": "G4 no session",
+      "check": "GET /api/v4/channels/{private}",
+      "status": 401,
+      "denied": true
+    },
+    {
+      "group": "G4 no session",
+      "check": "GET /api/v4/channels/{private}/posts",
+      "status": 401,
+      "denied": true
+    },
+    {
+      "group": "G4 forged token",
+      "check": "GET /api/v4/users/me",
+      "status": 401,
+      "denied": true
+    },
+    {
+      "group": "G4 forged token",
+      "check": "GET /api/v4/channels/{private}",
+      "status": 401,
+      "denied": true
+    },
+    {
+      "group": "G4 forged token",
+      "check": "GET /api/v4/channels/{private}/posts",
+      "status": 401,
+      "denied": true
+    }
+  ]
+}

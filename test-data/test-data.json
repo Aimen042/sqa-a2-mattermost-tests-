@@ -1,0 +1,30 @@
+{
+  "_comment": "Inputs used by the functional cases. EP = equivalence partition, BVA = boundary value. Boundaries marked 'from server' are read from the live configuration at run time.",
+  "FR-01_login": {
+    "valid_partition": "registered user + correct password (qa.alice / Qa#Pass2026)",
+    "invalid_partition": "registered user + wrong password (WrongPass#000)"
+  },
+  "FR-02_message_length": {
+    "max_length": "from server (client config MaxPostSize, normally 16383)",
+    "bva_values": ["max", "max + 1"]
+  },
+  "FR-03_channel_display_name": {
+    "valid_partition": "private channel with valid name created by a team member",
+    "max_length": 64,
+    "bva_values": [64, 65]
+  },
+  "FR-04_search": {
+    "valid_partition": "existing keyword, and keyword + in:<channel> modifier",
+    "invalid_partition": "misspelled keyword (budget -> budhet, as in A1 QO-02)"
+  },
+  "FR-05_file_size": {
+    "valid_partition": "small .txt file shared with another member",
+    "max_bytes": "from server (FileSettings.MaxFileSize; set to MAX_FILE_SIZE_MB by global setup, default 1 MB = 1048576 bytes)",
+    "bva_values": ["max", "max + 1"]
+  },
+  "FR-06_registration": {
+    "password_min_length": "from server (PasswordSettings.MinimumLength, normally 8)",
+    "bva_values": ["min - 1", "min"],
+    "invalid_partition": "email without @ and domain (not-an-email)"
+  }
+}

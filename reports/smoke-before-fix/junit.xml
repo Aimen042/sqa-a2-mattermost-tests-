@@ -1,0 +1,65 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="25.212248">
+<testsuite name="module-a-auth-account.spec.ts" timestamp="2026-11-22T07:42:13.706Z" hostname="chromium" tests="1" failures="0" skipped="0" time="5.784" errors="0">
+<testcase name="Module A - User Authentication &amp; Account Management › TC-A01 [FR-01][EP-valid] Login with valid credentials opens the team workspace @smoke @fr01 @memberA" classname="module-a-auth-account.spec.ts" time="5.784">
+<properties>
+<property name="requirement" value="FR-01">
+</property>
+<property name="owner" value="Aimen (Member 1)">
+</property>
+<property name="technique" value="EP - valid partition (registered user + correct password)">
+</property>
+<property name="inputs" value="qa.alice / Qa#Pass2026">
+</property>
+<property name="actual" value="Logged in; landed on /qa-team/channels/town-square; MMAUTHTOKEN cookie present">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts/module-a-auth-account-Modu-f6c94-orkspace-smoke-fr01-memberA-chromium/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="module-b-messaging-search.spec.ts" timestamp="2026-11-22T07:42:13.706Z" hostname="chromium" tests="1" failures="0" skipped="0" time="10.215" errors="0">
+<testcase name="Module B - Messaging &amp; Search › TC-B01 [FR-02][EP-valid] Sent message is displayed and persists after reload @smoke @fr02 @memberB" classname="module-b-messaging-search.spec.ts" time="10.215">
+<properties>
+<property name="requirement" value="FR-02">
+</property>
+<property name="owner" value="Bakhtawar (Member 2)">
+</property>
+<property name="technique" value="EP - valid partition (normal text message, member of the channel)">
+</property>
+<property name="inputs" value="Smoke message msgmwrj472asunta">
+</property>
+<property name="actual" value="Message shown, still shown after reload, found via API">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts/module-b-messaging-search--47008-r-reload-smoke-fr02-memberB-chromium/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="module-c-channels-files.spec.ts" timestamp="2026-11-22T07:42:13.706Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.588" errors="0">
+<testcase name="Module C - Channels &amp; File Sharing › TC-C01 [FR-03][EP-valid] User creates a private channel, adds a member, and the member can open it @smoke @fr03 @memberC" classname="module-c-channels-files.spec.ts" time="7.588">
+<properties>
+<property name="requirement" value="FR-03">
+</property>
+<property name="owner" value="Muhammad Huzaifa (Member 3)">
+</property>
+<property name="technique" value="EP - valid partition (valid name, user permitted to create)">
+</property>
+<property name="inputs" value="name=qa-test-mwrj4ezeshpx, display=&quot;QA_Test chmwrj4eze5v0hp&quot;, type=P, member=qa.bob">
+</property>
+<property name="actual" value="Channel created (201, type P), bob added (201), bob opened /qa-team/channels/qa-test-mwrj4ezeshpx in the UI">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts/module-c-channels-files-Mo-fd327--open-it-smoke-fr03-memberC-chromium/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

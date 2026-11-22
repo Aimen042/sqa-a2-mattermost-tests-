@@ -1,0 +1,442 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/share/nvm/versions/node/v24.22.2/bin/node",
+      "/workspaces/sqa-a2-mattermost-tests-/node_modules/.bin/playwright",
+      "test",
+      "--grep",
+      "@smoke"
+    ],
+    "configFile": "/workspaces/sqa-a2-mattermost-tests-/playwright.config.ts",
+    "rootDir": "/workspaces/sqa-a2-mattermost-tests-/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "/workspaces/sqa-a2-mattermost-tests-/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspaces/sqa-a2-mattermost-tests-/reports/smoke/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/workspaces/sqa-a2-mattermost-tests-/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspaces/sqa-a2-mattermost-tests-/reports/smoke/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/workspaces/sqa-a2-mattermost-tests-/tests",
+        "snapshotDir": "/workspaces/sqa-a2-mattermost-tests-/tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://localhost:8065",
+          "screenshot": "on",
+          "video": "retain-on-failure",
+          "trace": "retain-on-failure",
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "actionTimeout": 15000,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.8154.6 Safari/537.36",
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "reports/smoke/html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/smoke/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "reports/smoke/junit.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "module-a-auth-account.spec.ts",
+      "file": "module-a-auth-account.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Module A - User Authentication & Account Management",
+          "file": "module-a-auth-account.spec.ts",
+          "line": 20,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-A01 [FR-01][EP-valid] Login with valid credentials opens the team workspace @smoke @fr01 @memberA",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "fr01",
+                "memberA"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-01"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Aimen (Member 1)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "EP - valid partition (registered user + correct password)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "qa.alice / Qa#Pass2026"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "Logged in; landed on /qa-team/channels/town-square; MMAUTHTOKEN cookie present"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5784,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:42:14.121Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-01"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Aimen (Member 1)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "EP - valid partition (registered user + correct password)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "qa.alice / Qa#Pass2026"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "Logged in; landed on /qa-team/channels/town-square; MMAUTHTOKEN cookie present"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/workspaces/sqa-a2-mattermost-tests-/reports/smoke/artifacts/module-a-auth-account-Modu-f6c94-orkspace-smoke-fr01-memberA-chromium/test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "879a6daf8458e6448672-f09d7997980fa43c2e0e",
+              "file": "module-a-auth-account.spec.ts",
+              "line": 21,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "module-b-messaging-search.spec.ts",
+      "file": "module-b-messaging-search.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Module B - Messaging & Search",
+          "file": "module-b-messaging-search.spec.ts",
+          "line": 14,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-B01 [FR-02][EP-valid] Sent message is displayed and persists after reload @smoke @fr02 @memberB",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "fr02",
+                "memberB"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-02"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Bakhtawar (Member 2)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "EP - valid partition (normal text message, member of the channel)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "Smoke message msgmwrj472asunta"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "Message shown, still shown after reload, found via API"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10215,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:42:20.037Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-02"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Bakhtawar (Member 2)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "EP - valid partition (normal text message, member of the channel)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "Smoke message msgmwrj472asunta"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "Message shown, still shown after reload, found via API"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/workspaces/sqa-a2-mattermost-tests-/reports/smoke/artifacts/module-b-messaging-search--47008-r-reload-smoke-fr02-memberB-chromium/test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c29c98e9e150ee5831fc-fb91a914be29081fc3bf",
+              "file": "module-b-messaging-search.spec.ts",
+              "line": 15,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "module-c-channels-files.spec.ts",
+      "file": "module-c-channels-files.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Module C - Channels & File Sharing",
+          "file": "module-c-channels-files.spec.ts",
+          "line": 14,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-C01 [FR-03][EP-valid] User creates a private channel, adds a member, and the member can open it @smoke @fr03 @memberC",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "fr03",
+                "memberC"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-03"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Muhammad Huzaifa (Member 3)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "EP - valid partition (valid name, user permitted to create)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "name=qa-test-mwrj4ezeshpx, display=\"QA_Test chmwrj4eze5v0hp\", type=P, member=qa.bob"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "Channel created (201, type P), bob added (201), bob opened /qa-team/channels/qa-test-mwrj4ezeshpx in the UI"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7588,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:42:30.279Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-03"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Muhammad Huzaifa (Member 3)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "EP - valid partition (valid name, user permitted to create)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "name=qa-test-mwrj4ezeshpx, display=\"QA_Test chmwrj4eze5v0hp\", type=P, member=qa.bob"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "Channel created (201, type P), bob added (201), bob opened /qa-team/channels/qa-test-mwrj4ezeshpx in the UI"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/workspaces/sqa-a2-mattermost-tests-/reports/smoke/artifacts/module-c-channels-files-Mo-fd327--open-it-smoke-fr03-memberC-chromium/test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d825962a5694532510ee-d62fbca3d47ae99d0a05",
+              "file": "module-c-channels-files.spec.ts",
+              "line": 15,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-22T07:42:12.778Z",
+    "duration": 25212.248,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

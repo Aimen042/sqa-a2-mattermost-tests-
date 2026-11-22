@@ -1,0 +1,336 @@
+<testsuites id="" name="" tests="16" failures="1" skipped="0" errors="0" time="75.116421">
+<testsuite name="e2e/e2e-critical-workflow.spec.ts" timestamp="2026-11-22T07:46:16.418Z" hostname="chromium" tests="1" failures="0" skipped="0" time="16.624" errors="0">
+<testcase name="E2E-01 Critical workflow: send a message in a private channel (login -&gt; open -&gt; send -&gt; view -&gt; search/reply) @e2e @fr05" classname="e2e/e2e-critical-workflow.spec.ts" time="16.624">
+<properties>
+<property name="requirement" value="FR-01, FR-02, FR-03, FR-04, FR-05 (+NFR-02)">
+</property>
+<property name="owner" value="Aimen, Bakhtawar, Muhammad Huzaifa">
+</property>
+<property name="technique" value="End-to-end scenario (A1 critical workflow)">
+</property>
+<property name="inputs" value="keyword=e2emwrj99tbkyvlk; file=e2e-e2emwrj99tbkyvlk.txt">
+</property>
+<property name="actual" value="All steps passed: channel qa-e2e-mwrj99y6v047, post um4je39smj8ypj5qyajq7ipmyr viewed by member, found by search, replied (thread of 2), non-member denied">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/attachments/e2e-step5-alice-sent-796ae5f70ef94e1e83c74608a1aadaa304756b65.png]]
+
+[[ATTACHMENT|artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/attachments/e2e-step6-bob-views-1b6db637ca554ecf9e2dfdcefe078054579f77e3.png]]
+
+[[ATTACHMENT|artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/test-finished-2.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="module-a-auth-account.spec.ts" timestamp="2026-11-22T07:46:16.418Z" hostname="chromium" tests="4" failures="0" skipped="0" time="11.542" errors="0">
+<testcase name="Module A - User Authentication &amp; Account Management › TC-A01 [FR-01][EP-valid] Login with valid credentials opens the team workspace @smoke @fr01 @memberA" classname="module-a-auth-account.spec.ts" time="5.651">
+<properties>
+<property name="requirement" value="FR-01">
+</property>
+<property name="owner" value="Aimen (Member 1)">
+</property>
+<property name="technique" value="EP - valid partition (registered user + correct password)">
+</property>
+<property name="inputs" value="qa.alice / Qa#Pass2026">
+</property>
+<property name="actual" value="Logged in; landed on /qa-team/channels/town-square; MMAUTHTOKEN cookie present">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts/module-a-auth-account-Modu-f6c94-orkspace-smoke-fr01-memberA-chromium/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Module A - User Authentication &amp; Account Management › TC-A02 [FR-01][EP-invalid] Login with wrong password is rejected @fr01 @memberA" classname="module-a-auth-account.spec.ts" time="5.47">
+<properties>
+<property name="requirement" value="FR-01">
+</property>
+<property name="owner" value="Aimen (Member 1)">
+</property>
+<property name="technique" value="EP - invalid partition (registered user + wrong password)">
+</property>
+<property name="inputs" value="qa.alice / WrongPass#000">
+</property>
+<property name="actual" value="Error shown: &quot;The email/username or password is invalid.&quot;; stayed on /login; API login returned 401">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts/module-a-auth-account-Modu-bbbf3-rd-is-rejected-fr01-memberA-chromium/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Module A - User Authentication &amp; Account Management › TC-A03 [FR-06][BVA] Registration password length: min-1 rejected, min accepted @fr06 @memberA" classname="module-a-auth-account.spec.ts" time="0.281">
+<properties>
+<property name="requirement" value="FR-06">
+</property>
+<property name="owner" value="Aimen (Member 1)">
+</property>
+<property name="technique" value="BVA - password length min-1 (7) and min (8)">
+</property>
+<property name="inputs" value="password lengths 7 and 8">
+</property>
+<property name="actual" value="PasswordSettings.MinimumLength=8; 7 chars -&gt; 400 (model.user.is_valid.pwd_min_length.app_error); 8 chars -&gt; 201, login 200">
+</property>
+</properties>
+</testcase>
+<testcase name="Module A - User Authentication &amp; Account Management › TC-A04 [FR-06][EP-invalid] Registration with an invalid email address is rejected @fr06 @memberA" classname="module-a-auth-account.spec.ts" time="0.14">
+<properties>
+<property name="requirement" value="FR-06">
+</property>
+<property name="owner" value="Aimen (Member 1)">
+</property>
+<property name="technique" value="EP - invalid partition (email without @ and domain)">
+</property>
+<property name="inputs" value="email=&quot;not-an-email&quot;, username=bademwrj9vhqhql">
+</property>
+<property name="actual" value="HTTP 400 - model.user.is_valid.email.app_error: &quot;Invalid email.&quot;; login for that username -&gt; 401 (not created)">
+</property>
+</properties>
+</testcase>
+</testsuite>
+<testsuite name="module-b-messaging-search.spec.ts" timestamp="2026-11-22T07:46:16.418Z" hostname="chromium" tests="4" failures="0" skipped="0" time="10.583" errors="0">
+<testcase name="Module B - Messaging &amp; Search › TC-B01 [FR-02][EP-valid] Sent message is displayed and persists after reload @smoke @fr02 @memberB" classname="module-b-messaging-search.spec.ts" time="10.029">
+<properties>
+<property name="requirement" value="FR-02">
+</property>
+<property name="owner" value="Bakhtawar (Member 2)">
+</property>
+<property name="technique" value="EP - valid partition (normal text message, member of the channel)">
+</property>
+<property name="inputs" value="Smoke message msgmwrj9vn8ayoxi">
+</property>
+<property name="actual" value="Message shown, still shown after reload, found via API">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts/module-b-messaging-search--47008-r-reload-smoke-fr02-memberB-chromium/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Module B - Messaging &amp; Search › TC-B02 [FR-02][BVA] Message length: max accepted, max+1 rejected @fr02 @memberB" classname="module-b-messaging-search.spec.ts" time="0.209">
+<properties>
+<property name="requirement" value="FR-02">
+</property>
+<property name="owner" value="Bakhtawar (Member 2)">
+</property>
+<property name="technique" value="BVA - max (262144) and max+1 (262145) characters">
+</property>
+<property name="inputs" value="messages of 262144 and 262145 characters">
+</property>
+<property name="actual" value="MaxPostSize=262144; 262144 chars -&gt; HTTP 201; 262145 chars -&gt; HTTP 400">
+</property>
+</properties>
+</testcase>
+<testcase name="Module B - Messaging &amp; Search › TC-B03 [FR-04][EP-valid] Keyword search with the in: modifier returns only messages from that channel @fr04 @memberB" classname="module-b-messaging-search.spec.ts" time="0.181">
+<properties>
+<property name="requirement" value="FR-04">
+</property>
+<property name="owner" value="Bakhtawar (Member 2)">
+</property>
+<property name="technique" value="EP - valid partition (existing keyword + supported modifier)">
+</property>
+<property name="inputs" value="&quot;qakwmwrja3mrx4pgn&quot; and &quot;qakwmwrja3mrx4pgn in:qa-scratch&quot;">
+</property>
+<property name="actual" value="&quot;qakwmwrja3mrx4pgn&quot; -&gt; 2 results; &quot;qakwmwrja3mrx4pgn in:qa-scratch&quot; -&gt; 1 result (post yqrj3f94wf81tfdntfwyozbdmw)">
+</property>
+</properties>
+</testcase>
+<testcase name="Module B - Messaging &amp; Search › TC-B04 [FR-04][EP-invalid] Misspelled / non-existent keyword returns no results @fr04 @memberB" classname="module-b-messaging-search.spec.ts" time="0.164">
+<properties>
+<property name="requirement" value="FR-04">
+</property>
+<property name="owner" value="Bakhtawar (Member 2)">
+</property>
+<property name="technique" value="EP - invalid partition (term that matches no message)">
+</property>
+<property name="inputs" value="stored &quot;budgetmwrja3rxqmqff&quot;, searched &quot;budhetmwrja3rxqmqff&quot;">
+</property>
+<property name="actual" value="Correct term -&gt; 1 result; misspelled &quot;budhetmwrja3rxqmqff&quot; -&gt; HTTP 200, 0 results">
+</property>
+</properties>
+</testcase>
+</testsuite>
+<testsuite name="module-c-channels-files.spec.ts" timestamp="2026-11-22T07:46:16.418Z" hostname="chromium" tests="4" failures="0" skipped="0" time="8.343" errors="0">
+<testcase name="Module C - Channels &amp; File Sharing › TC-C01 [FR-03][EP-valid] User creates a private channel, adds a member, and the member can open it @smoke @fr03 @memberC" classname="module-c-channels-files.spec.ts" time="7.62">
+<properties>
+<property name="requirement" value="FR-03">
+</property>
+<property name="owner" value="Muhammad Huzaifa (Member 3)">
+</property>
+<property name="technique" value="EP - valid partition (valid name, user permitted to create)">
+</property>
+<property name="inputs" value="name=qa-test-mwrja3uv67f1, display=&quot;QA_Test chmwrja3uv0qfg0&quot;, type=P, member=qa.bob">
+</property>
+<property name="actual" value="Channel created (201, type P), bob added (201), bob opened /qa-team/channels/qa-test-mwrja3uv67f1 in the UI">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts/module-c-channels-files-Mo-fd327--open-it-smoke-fr03-memberC-chromium/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Module C - Channels &amp; File Sharing › TC-C02 [FR-03][BVA] Channel display name: 64 chars accepted, 65 chars rejected @fr03 @memberC" classname="module-c-channels-files.spec.ts" time="0.167">
+<properties>
+<property name="requirement" value="FR-03">
+</property>
+<property name="owner" value="Muhammad Huzaifa (Member 3)">
+</property>
+<property name="technique" value="BVA - max (64) and max+1 (65) on display name length">
+</property>
+<property name="inputs" value="display_name of length 64 and 65">
+</property>
+<property name="actual" value="64 chars -&gt; HTTP 201; 65 chars -&gt; HTTP 400">
+</property>
+</properties>
+</testcase>
+<testcase name="Module C - Channels &amp; File Sharing › TC-C03 [FR-05][BVA] File size: exactly max accepted, max+1 byte rejected @fr05 @memberC" classname="module-c-channels-files.spec.ts" time="0.261">
+<properties>
+<property name="requirement" value="FR-05">
+</property>
+<property name="owner" value="Muhammad Huzaifa (Member 3)">
+</property>
+<property name="technique" value="BVA - max (1048576 B) and max+1 (1048577 B)">
+</property>
+<property name="inputs" value="binary files of 1048576 and 1048577 bytes">
+</property>
+<property name="actual" value="MaxFileSize=1048576; 1048576 B -&gt; HTTP 201; 1048577 B -&gt; HTTP 413 api.file.upload_file.too_large_detailed.app_error">
+</property>
+</properties>
+</testcase>
+<testcase name="Module C - Channels &amp; File Sharing › TC-C04 [FR-05][EP-valid] File attached to a message is downloaded unchanged by another member @fr05 @memberC" classname="module-c-channels-files.spec.ts" time="0.295">
+<properties>
+<property name="requirement" value="FR-05">
+</property>
+<property name="owner" value="Muhammad Huzaifa (Member 3)">
+</property>
+<property name="technique" value="EP - valid partition (supported file within size limit)">
+</property>
+<property name="inputs" value="notes.txt (42 B)">
+</property>
+<property name="actual" value="Upload 201 (42 B), post 201 with file id, member sees name &quot;notes.txt&quot; and downloads identical content (200)">
+</property>
+</properties>
+</testcase>
+</testsuite>
+<testsuite name="nfr/nfr-01-performance.spec.ts" timestamp="2026-11-22T07:46:16.418Z" hostname="chromium" tests="1" failures="0" skipped="0" time="1.107" errors="0">
+<testcase name="NFR-01 [Performance] Search and open-channel p95 response time under 5 concurrent users @nfr @memberB" classname="nfr/nfr-01-performance.spec.ts" time="1.107">
+<properties>
+<property name="requirement" value="NFR-01">
+</property>
+<property name="owner" value="Bakhtawar (Member 2)">
+</property>
+<property name="technique" value="Measurement (concurrent load, local)">
+</property>
+<property name="inputs" value="5 VUs x 10 iterations; 20 seeded posts">
+</property>
+<property name="actual" value="search p95=33 ms; open-channel p95=34.6 ms; errors=0/100; 196.24 req/s">
+</property>
+</properties>
+</testcase>
+</testsuite>
+<testsuite name="nfr/nfr-02-security.spec.ts" timestamp="2026-11-22T07:46:16.418Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.595" errors="0">
+<testcase name="NFR-02 [Security] Private-channel content and privileged operations restricted to authorized users @nfr @memberC" classname="nfr/nfr-02-security.spec.ts" time="0.595">
+<properties>
+<property name="requirement" value="NFR-02">
+</property>
+<property name="owner" value="Muhammad Huzaifa (Member 3)">
+</property>
+<property name="technique" value="Measurement (authorization probes)">
+</property>
+<property name="inputs" value="non-member, removed member, regular user vs admin APIs, no/forged session">
+</property>
+<property name="actual" value="22/22 unauthorized requests denied (100%)">
+</property>
+</properties>
+</testcase>
+</testsuite>
+<testsuite name="nfr/nfr-03-usability.spec.ts" timestamp="2026-11-22T07:46:16.418Z" hostname="chromium" tests="1" failures="1" skipped="0" time="23.18" errors="0">
+<testcase name="NFR-03 [Usability] No critical accessibility violations; send-message task within time limit @nfr @memberA" classname="nfr/nfr-03-usability.spec.ts" time="23.18">
+<properties>
+<property name="requirement" value="NFR-03">
+</property>
+<property name="owner" value="Aimen (Member 1)">
+</property>
+<property name="technique" value="Measurement (axe-core scan + task timing)">
+</property>
+<property name="inputs" value="pages: /signup_user_complete, /login, channel view; tags wcag2a,wcag2aa,wcag21a,wcag21aa; 3 timed send-message tasks">
+</property>
+<property name="actual" value="critical: signup 1, login 0, channel 1 (serious: 1/1/2); task median 2813 ms [2813, 2754, 2829]">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/video-1.webm]]
+
+[[ATTACHMENT|artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/video-2.webm]]
+
+[[ATTACHMENT|artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/video-3.webm]]
+
+[[ATTACHMENT|artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/video.webm]]
+
+[[ATTACHMENT|artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/error-context.md]]
+
+[[ATTACHMENT|artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(received).toBeLessThanOrEqual(expected)" type="expect.toBeLessThanOrEqual">
+<![CDATA[  [chromium] › nfr/nfr-03-usability.spec.ts:27:1 › NFR-03 [Usability] No critical accessibility violations; send-message task within time limit @nfr @memberA 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 0
+    Received:    2
+
+      67 |   actual(`critical: signup ${signup.byImpact.critical}, login ${login.byImpact.critical}, channel ${channel.byImpact.critical} (serious: ${signup.byImpact.serious}/${login.byImpact.serious}/${channel.byImpact.serious}); task median ${medianMs} ms [${timings.join(', ')}]`);
+      68 |
+    > 69 |   expect(critical).toBeLessThanOrEqual(t.max_critical);
+         |                    ^
+      70 |   expect(medianMs).toBeLessThanOrEqual(t.task_median_ms_max);
+      71 | });
+      72 |
+        at /workspaces/sqa-a2-mattermost-tests-/tests/nfr/nfr-03-usability.spec.ts:69:20
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/video-1.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/video-2.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/video-3.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/error-context.md
+
+    attachment #8: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+</testsuite>
+</testsuites>

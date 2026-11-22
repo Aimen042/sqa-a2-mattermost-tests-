@@ -1,0 +1,10 @@
+{
+  "run": "smoke",
+  "startedAt": "2026-11-22T07:55:08.375Z",
+  "baseUrl": "http://localhost:8065",
+  "mattermostVersion": "12.1.0.41996731193.7e95e2d81189ba0f9c169593645d5399b9bf96647f048aada321af4e7f5bda29.false",
+  "maxFileSizeBytes": 1048576,
+  "passwordMinLength": 8,
+  "node": "v24.22.2",
+  "platform": "linux x64"
+}

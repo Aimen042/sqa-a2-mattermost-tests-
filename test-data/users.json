@@ -1,0 +1,43 @@
+{
+  "team": {
+    "name": "qa-team",
+    "display_name": "QA Team"
+  },
+  "users": {
+    "alice": {
+      "username": "qa.alice",
+      "email": "qa.alice@example.com",
+      "password": "Qa#Pass2026",
+      "role": "Channel owner / sender (all modules)"
+    },
+    "bob": {
+      "username": "qa.bob",
+      "email": "qa.bob@example.com",
+      "password": "Qa#Pass2026",
+      "role": "Authorized member of private channels (FR-03, FR-05, E2E, NFR-02 removed-member check)"
+    },
+    "eve": {
+      "username": "qa.eve",
+      "email": "qa.eve@example.com",
+      "password": "Qa#Pass2026",
+      "role": "Team member but NOT in private channels (NFR-02 non-member, E2E step 8)"
+    }
+  },
+  "channels": {
+    "scratch": {
+      "name": "qa-scratch",
+      "display_name": "QA Scratch",
+      "type": "O"
+    },
+    "private": {
+      "name": "qa-private",
+      "display_name": "QA Private",
+      "type": "P"
+    }
+  },
+  "members": {
+    "Member 1": "Aimen (02-134231-042) - Module A",
+    "Member 2": "Bakhtawar (02-134231-100) - Module B",
+    "Member 3": "Muhammad Huzaifa (02-134231-006) - Module C"
+  }
+}

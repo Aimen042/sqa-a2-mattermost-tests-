@@ -1,0 +1,27 @@
+{
+  "name": "sqa-a2-mattermost-tests",
+  "version": "1.0.0",
+  "description": "SEN-420 Assignment 2 - automated functional, non-functional and end-to-end tests for Mattermost (Playwright)",
+  "private": true,
+  "scripts": {
+    "mm:start": "bash scripts/start-mattermost.sh",
+    "mm:stop": "docker stop mattermost-preview",
+    "test:smoke": "RUN_NAME=smoke playwright test --grep @smoke",
+    "test:all": "RUN_NAME=full playwright test",
+    "test:memberA": "RUN_NAME=memberA playwright test --grep @memberA",
+    "test:memberB": "RUN_NAME=memberB playwright test --grep @memberB",
+    "test:memberC": "RUN_NAME=memberC playwright test --grep @memberC",
+    "test:e2e": "RUN_NAME=e2e playwright test --grep @e2e",
+    "test:regression:before": "RUN_NAME=regression-before MAX_FILE_SIZE_MB=1 playwright test --grep \"@fr05|@e2e\"",
+    "test:regression:after": "RUN_NAME=regression-after MAX_FILE_SIZE_MB=2 playwright test --grep \"@fr05|@e2e\"",
+    "summary": "node scripts/summarize.mjs",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.65.1",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}

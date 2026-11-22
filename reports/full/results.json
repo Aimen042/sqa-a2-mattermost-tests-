@@ -1,0 +1,1633 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/share/nvm/versions/node/v24.22.2/bin/node",
+      "/workspaces/sqa-a2-mattermost-tests-/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/workspaces/sqa-a2-mattermost-tests-/playwright.config.ts",
+    "rootDir": "/workspaces/sqa-a2-mattermost-tests-/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "/workspaces/sqa-a2-mattermost-tests-/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/workspaces/sqa-a2-mattermost-tests-/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/workspaces/sqa-a2-mattermost-tests-/tests",
+        "snapshotDir": "/workspaces/sqa-a2-mattermost-tests-/tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://localhost:8065",
+          "screenshot": "on",
+          "video": "retain-on-failure",
+          "trace": "retain-on-failure",
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "actionTimeout": 15000,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.8154.6 Safari/537.36",
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "reports/full/html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/full/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "reports/full/junit.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "e2e/e2e-critical-workflow.spec.ts",
+      "file": "e2e/e2e-critical-workflow.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "E2E-01 Critical workflow: send a message in a private channel (login -> open -> send -> view -> search/reply) @e2e @fr05",
+          "ok": true,
+          "tags": [
+            "e2e",
+            "fr05"
+          ],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [
+                {
+                  "type": "requirement",
+                  "description": "FR-01, FR-02, FR-03, FR-04, FR-05 (+NFR-02)"
+                },
+                {
+                  "type": "owner",
+                  "description": "Aimen, Bakhtawar, Muhammad Huzaifa"
+                },
+                {
+                  "type": "technique",
+                  "description": "End-to-end scenario (A1 critical workflow)"
+                },
+                {
+                  "type": "inputs",
+                  "description": "keyword=e2emwrj99tbkyvlk; file=e2e-e2emwrj99tbkyvlk.txt"
+                },
+                {
+                  "type": "actual",
+                  "description": "All steps passed: channel qa-e2e-mwrj99y6v047, post um4je39smj8ypj5qyajq7ipmyr viewed by member, found by search, replied (thread of 2), non-member denied"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16624,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "0. Precondition: private channel exists and Bob is a member (Module C)",
+                      "duration": 40
+                    },
+                    {
+                      "title": "1. Alice logs in (Module A)",
+                      "duration": 4836
+                    },
+                    {
+                      "title": "2. Alice opens the private channel (Module C)",
+                      "duration": 2159
+                    },
+                    {
+                      "title": "3-5. Alice attaches a file, enters and sends a message; it is displayed (Modules B + C)",
+                      "duration": 674
+                    },
+                    {
+                      "title": "6. Bob (authorized member) logs in and views the message (Modules A + B)",
+                      "duration": 7784
+                    },
+                    {
+                      "title": "7. Bob searches the message, downloads the file and replies (Modules B + C)",
+                      "duration": 64
+                    },
+                    {
+                      "title": "8. Eve (non-member) cannot open, read or find it (Module C / NFR-02)",
+                      "duration": 206
+                    }
+                  ],
+                  "startTime": "2026-11-22T07:46:16.843Z",
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-01, FR-02, FR-03, FR-04, FR-05 (+NFR-02)"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Aimen, Bakhtawar, Muhammad Huzaifa"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "End-to-end scenario (A1 critical workflow)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "keyword=e2emwrj99tbkyvlk; file=e2e-e2emwrj99tbkyvlk.txt"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "All steps passed: channel qa-e2e-mwrj99y6v047, post um4je39smj8ypj5qyajq7ipmyr viewed by member, found by search, replied (thread of 2), non-member denied"
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "e2e-step5-alice-sent",
+                      "contentType": "image/png",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/attachments/e2e-step5-alice-sent-796ae5f70ef94e1e83c74608a1aadaa304756b65.png"
+                    },
+                    {
+                      "name": "e2e-step6-bob-views",
+                      "contentType": "image/png",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/attachments/e2e-step6-bob-views-1b6db637ca554ecf9e2dfdcefe078054579f77e3.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/test-finished-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/test-finished-2.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "edc6ed93fd7063c77372-bacb639dae740dec2c8b",
+          "file": "e2e/e2e-critical-workflow.spec.ts",
+          "line": 17,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "module-a-auth-account.spec.ts",
+      "file": "module-a-auth-account.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Module A - User Authentication & Account Management",
+          "file": "module-a-auth-account.spec.ts",
+          "line": 20,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-A01 [FR-01][EP-valid] Login with valid credentials opens the team workspace @smoke @fr01 @memberA",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "fr01",
+                "memberA"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-01"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Aimen (Member 1)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "EP - valid partition (registered user + correct password)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "qa.alice / Qa#Pass2026"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "Logged in; landed on /qa-team/channels/town-square; MMAUTHTOKEN cookie present"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5651,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:46:33.588Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-01"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Aimen (Member 1)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "EP - valid partition (registered user + correct password)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "qa.alice / Qa#Pass2026"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "Logged in; landed on /qa-team/channels/town-square; MMAUTHTOKEN cookie present"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/module-a-auth-account-Modu-f6c94-orkspace-smoke-fr01-memberA-chromium/test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "879a6daf8458e6448672-f09d7997980fa43c2e0e",
+              "file": "module-a-auth-account.spec.ts",
+              "line": 21,
+              "column": 3
+            },
+            {
+              "title": "TC-A02 [FR-01][EP-invalid] Login with wrong password is rejected @fr01 @memberA",
+              "ok": true,
+              "tags": [
+                "fr01",
+                "memberA"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-01"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Aimen (Member 1)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "EP - invalid partition (registered user + wrong password)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "qa.alice / WrongPass#000"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "Error shown: \"The email/username or password is invalid.\"; stayed on /login; API login returned 401"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5470,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:46:39.255Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-01"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Aimen (Member 1)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "EP - invalid partition (registered user + wrong password)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "qa.alice / WrongPass#000"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "Error shown: \"The email/username or password is invalid.\"; stayed on /login; API login returned 401"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/module-a-auth-account-Modu-bbbf3-rd-is-rejected-fr01-memberA-chromium/test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "879a6daf8458e6448672-b66250a3f5d2f5f2bab3",
+              "file": "module-a-auth-account.spec.ts",
+              "line": 36,
+              "column": 3
+            },
+            {
+              "title": "TC-A03 [FR-06][BVA] Registration password length: min-1 rejected, min accepted @fr06 @memberA",
+              "ok": true,
+              "tags": [
+                "fr06",
+                "memberA"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Aimen (Member 1)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "BVA - password length min-1 (7) and min (8)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "password lengths 7 and 8"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "PasswordSettings.MinimumLength=8; 7 chars -> 400 (model.user.is_valid.pwd_min_length.app_error); 8 chars -> 201, login 200"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 281,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:46:44.740Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Aimen (Member 1)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "BVA - password length min-1 (7) and min (8)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "password lengths 7 and 8"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "PasswordSettings.MinimumLength=8; 7 chars -> 400 (model.user.is_valid.pwd_min_length.app_error); 8 chars -> 201, login 200"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "879a6daf8458e6448672-a881919ccf9e03e46671",
+              "file": "module-a-auth-account.spec.ts",
+              "line": 57,
+              "column": 3
+            },
+            {
+              "title": "TC-A04 [FR-06][EP-invalid] Registration with an invalid email address is rejected @fr06 @memberA",
+              "ok": true,
+              "tags": [
+                "fr06",
+                "memberA"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Aimen (Member 1)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "EP - invalid partition (email without @ and domain)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "email=\"not-an-email\", username=bademwrj9vhqhql"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "HTTP 400 - model.user.is_valid.email.app_error: \"Invalid email.\"; login for that username -> 401 (not created)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 140,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:46:45.032Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Aimen (Member 1)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "EP - invalid partition (email without @ and domain)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "email=\"not-an-email\", username=bademwrj9vhqhql"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "HTTP 400 - model.user.is_valid.email.app_error: \"Invalid email.\"; login for that username -> 401 (not created)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "879a6daf8458e6448672-4809f98a16a884f27e2d",
+              "file": "module-a-auth-account.spec.ts",
+              "line": 79,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "module-b-messaging-search.spec.ts",
+      "file": "module-b-messaging-search.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Module B - Messaging & Search",
+          "file": "module-b-messaging-search.spec.ts",
+          "line": 14,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-B01 [FR-02][EP-valid] Sent message is displayed and persists after reload @smoke @fr02 @memberB",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "fr02",
+                "memberB"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-02"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Bakhtawar (Member 2)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "EP - valid partition (normal text message, member of the channel)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "Smoke message msgmwrj9vn8ayoxi"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "Message shown, still shown after reload, found via API"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10029,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:46:45.188Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-02"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Bakhtawar (Member 2)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "EP - valid partition (normal text message, member of the channel)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "Smoke message msgmwrj9vn8ayoxi"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "Message shown, still shown after reload, found via API"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/module-b-messaging-search--47008-r-reload-smoke-fr02-memberB-chromium/test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c29c98e9e150ee5831fc-fb91a914be29081fc3bf",
+              "file": "module-b-messaging-search.spec.ts",
+              "line": 15,
+              "column": 3
+            },
+            {
+              "title": "TC-B02 [FR-02][BVA] Message length: max accepted, max+1 rejected @fr02 @memberB",
+              "ok": true,
+              "tags": [
+                "fr02",
+                "memberB"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-02"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Bakhtawar (Member 2)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "BVA - max (262144) and max+1 (262145) characters"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "messages of 262144 and 262145 characters"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "MaxPostSize=262144; 262144 chars -> HTTP 201; 262145 chars -> HTTP 400"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 209,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:46:55.229Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-02"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Bakhtawar (Member 2)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "BVA - max (262144) and max+1 (262145) characters"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "messages of 262144 and 262145 characters"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "MaxPostSize=262144; 262144 chars -> HTTP 201; 262145 chars -> HTTP 400"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c29c98e9e150ee5831fc-02c854363703b699a115",
+              "file": "module-b-messaging-search.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "TC-B03 [FR-04][EP-valid] Keyword search with the in: modifier returns only messages from that channel @fr04 @memberB",
+              "ok": true,
+              "tags": [
+                "fr04",
+                "memberB"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-04"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Bakhtawar (Member 2)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "EP - valid partition (existing keyword + supported modifier)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "\"qakwmwrja3mrx4pgn\" and \"qakwmwrja3mrx4pgn in:qa-scratch\""
+                    },
+                    {
+                      "type": "actual",
+                      "description": "\"qakwmwrja3mrx4pgn\" -> 2 results; \"qakwmwrja3mrx4pgn in:qa-scratch\" -> 1 result (post yqrj3f94wf81tfdntfwyozbdmw)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 181,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:46:55.448Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-04"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Bakhtawar (Member 2)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "EP - valid partition (existing keyword + supported modifier)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "\"qakwmwrja3mrx4pgn\" and \"qakwmwrja3mrx4pgn in:qa-scratch\""
+                        },
+                        {
+                          "type": "actual",
+                          "description": "\"qakwmwrja3mrx4pgn\" -> 2 results; \"qakwmwrja3mrx4pgn in:qa-scratch\" -> 1 result (post yqrj3f94wf81tfdntfwyozbdmw)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c29c98e9e150ee5831fc-85d18447e9a03a14204b",
+              "file": "module-b-messaging-search.spec.ts",
+              "line": 55,
+              "column": 3
+            },
+            {
+              "title": "TC-B04 [FR-04][EP-invalid] Misspelled / non-existent keyword returns no results @fr04 @memberB",
+              "ok": true,
+              "tags": [
+                "fr04",
+                "memberB"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-04"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Bakhtawar (Member 2)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "EP - invalid partition (term that matches no message)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "stored \"budgetmwrja3rxqmqff\", searched \"budhetmwrja3rxqmqff\""
+                    },
+                    {
+                      "type": "actual",
+                      "description": "Correct term -> 1 result; misspelled \"budhetmwrja3rxqmqff\" -> HTTP 200, 0 results"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 164,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:46:55.638Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-04"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Bakhtawar (Member 2)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "EP - invalid partition (term that matches no message)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "stored \"budgetmwrja3rxqmqff\", searched \"budhetmwrja3rxqmqff\""
+                        },
+                        {
+                          "type": "actual",
+                          "description": "Correct term -> 1 result; misspelled \"budhetmwrja3rxqmqff\" -> HTTP 200, 0 results"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c29c98e9e150ee5831fc-5bbd09b1ccf7a4d51781",
+              "file": "module-b-messaging-search.spec.ts",
+              "line": 77,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "module-c-channels-files.spec.ts",
+      "file": "module-c-channels-files.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Module C - Channels & File Sharing",
+          "file": "module-c-channels-files.spec.ts",
+          "line": 14,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-C01 [FR-03][EP-valid] User creates a private channel, adds a member, and the member can open it @smoke @fr03 @memberC",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "fr03",
+                "memberC"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-03"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Muhammad Huzaifa (Member 3)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "EP - valid partition (valid name, user permitted to create)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "name=qa-test-mwrja3uv67f1, display=\"QA_Test chmwrja3uv0qfg0\", type=P, member=qa.bob"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "Channel created (201, type P), bob added (201), bob opened /qa-team/channels/qa-test-mwrja3uv67f1 in the UI"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7620,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:46:55.817Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-03"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Muhammad Huzaifa (Member 3)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "EP - valid partition (valid name, user permitted to create)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "name=qa-test-mwrja3uv67f1, display=\"QA_Test chmwrja3uv0qfg0\", type=P, member=qa.bob"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "Channel created (201, type P), bob added (201), bob opened /qa-team/channels/qa-test-mwrja3uv67f1 in the UI"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/module-c-channels-files-Mo-fd327--open-it-smoke-fr03-memberC-chromium/test-finished-1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d825962a5694532510ee-d62fbca3d47ae99d0a05",
+              "file": "module-c-channels-files.spec.ts",
+              "line": 15,
+              "column": 3
+            },
+            {
+              "title": "TC-C02 [FR-03][BVA] Channel display name: 64 chars accepted, 65 chars rejected @fr03 @memberC",
+              "ok": true,
+              "tags": [
+                "fr03",
+                "memberC"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-03"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Muhammad Huzaifa (Member 3)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "BVA - max (64) and max+1 (65) on display name length"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "display_name of length 64 and 65"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "64 chars -> HTTP 201; 65 chars -> HTTP 400"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 167,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:47:03.448Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-03"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Muhammad Huzaifa (Member 3)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "BVA - max (64) and max+1 (65) on display name length"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "display_name of length 64 and 65"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "64 chars -> HTTP 201; 65 chars -> HTTP 400"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d825962a5694532510ee-193d90a7839a8032e0c4",
+              "file": "module-c-channels-files.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "TC-C03 [FR-05][BVA] File size: exactly max accepted, max+1 byte rejected @fr05 @memberC",
+              "ok": true,
+              "tags": [
+                "fr05",
+                "memberC"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-05"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Muhammad Huzaifa (Member 3)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "BVA - max (1048576 B) and max+1 (1048577 B)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "binary files of 1048576 and 1048577 bytes"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "MaxFileSize=1048576; 1048576 B -> HTTP 201; 1048577 B -> HTTP 413 api.file.upload_file.too_large_detailed.app_error"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 261,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:47:03.623Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-05"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Muhammad Huzaifa (Member 3)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "BVA - max (1048576 B) and max+1 (1048577 B)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "binary files of 1048576 and 1048577 bytes"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "MaxFileSize=1048576; 1048576 B -> HTTP 201; 1048577 B -> HTTP 413 api.file.upload_file.too_large_detailed.app_error"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d825962a5694532510ee-62b4fea555437cbffa1f",
+              "file": "module-c-channels-files.spec.ts",
+              "line": 54,
+              "column": 3
+            },
+            {
+              "title": "TC-C04 [FR-05][EP-valid] File attached to a message is downloaded unchanged by another member @fr05 @memberC",
+              "ok": true,
+              "tags": [
+                "fr05",
+                "memberC"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-05"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Muhammad Huzaifa (Member 3)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "EP - valid partition (supported file within size limit)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "notes.txt (42 B)"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "Upload 201 (42 B), post 201 with file id, member sees name \"notes.txt\" and downloads identical content (200)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 295,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-22T07:47:03.891Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-05"
+                        },
+                        {
+                          "type": "owner",
+                          "description": "Muhammad Huzaifa (Member 3)"
+                        },
+                        {
+                          "type": "technique",
+                          "description": "EP - valid partition (supported file within size limit)"
+                        },
+                        {
+                          "type": "inputs",
+                          "description": "notes.txt (42 B)"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "Upload 201 (42 B), post 201 with file id, member sees name \"notes.txt\" and downloads identical content (200)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d825962a5694532510ee-2334aa07bd6ff77b5120",
+              "file": "module-c-channels-files.spec.ts",
+              "line": 71,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "nfr/nfr-01-performance.spec.ts",
+      "file": "nfr/nfr-01-performance.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "NFR-01 [Performance] Search and open-channel p95 response time under 5 concurrent users @nfr @memberB",
+          "ok": true,
+          "tags": [
+            "nfr",
+            "memberB"
+          ],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [
+                {
+                  "type": "requirement",
+                  "description": "NFR-01"
+                },
+                {
+                  "type": "owner",
+                  "description": "Bakhtawar (Member 2)"
+                },
+                {
+                  "type": "technique",
+                  "description": "Measurement (concurrent load, local)"
+                },
+                {
+                  "type": "inputs",
+                  "description": "5 VUs x 10 iterations; 20 seeded posts"
+                },
+                {
+                  "type": "actual",
+                  "description": "search p95=33 ms; open-channel p95=34.6 ms; errors=0/100; 196.24 req/s"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1107,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T07:47:04.198Z",
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "NFR-01"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Bakhtawar (Member 2)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "Measurement (concurrent load, local)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "5 VUs x 10 iterations; 20 seeded posts"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "search p95=33 ms; open-channel p95=34.6 ms; errors=0/100; 196.24 req/s"
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "NFR-01-measurement",
+                      "contentType": "application/json",
+                      "body": "ewogICJpZCI6ICJORlItMDEiLAogICJtZXRyaWMiOiAiUmVzcG9uc2UgdGltZSBvZiBjb21tb24gb3BlcmF0aW9uczogc2VhcmNoIChQT1NUIC90ZWFtcy97aWR9L3Bvc3RzL3NlYXJjaCkgYW5kIG9wZW4gY2hhbm5lbCAoR0VUIGNoYW5uZWwgKyBHRVQgbGF0ZXN0IDYwIHBvc3RzKSIsCiAgImNvbmRpdGlvbnMiOiB7CiAgICAidmlydHVhbF91c2VycyI6IDUsCiAgICAiaXRlcmF0aW9uc19wZXJfdXNlciI6IDEwLAogICAgInNhbXBsZXNfcGVyX29wZXJhdGlvbiI6IDUwLAogICAgInNlZWRlZF9wb3N0cyI6IDIwLAogICAgInNlcnZlciI6ICJodHRwOi8vbG9jYWxob3N0OjgwNjUiLAogICAgInZlcnNpb24iOiAiMTIuMS4wLjQxOTk2NzMxMTkzLjczMzdlOGY5MTljNzI2YmFhNmJmOTU5NDIxYjA3ODllNWUxMDNmMDU3YmY1NGI2MmQ3NTg3MTMyNzliY2M4ZTEuZmFsc2UiCiAgfSwKICAidGhyZXNob2xkIjogewogICAgInNlYXJjaF9wOTVfbXNfbWF4IjogMTAwMCwKICAgICJvcGVuX2NoYW5uZWxfcDk1X21zX21heCI6IDEwMDAsCiAgICAiZXJyb3JfcmF0ZV9tYXgiOiAwCiAgfSwKICAibWVhc3VyZWQiOiB7CiAgICAic2VhcmNoIjogewogICAgICAibiI6IDUwLAogICAgICAibWluX21zIjogMTMuMiwKICAgICAgInA1MF9tcyI6IDIxLjYsCiAgICAgICJwOTBfbXMiOiAzMi44LAogICAgICAicDk1X21zIjogMzMsCiAgICAgICJtYXhfbXMiOiAzOC43LAogICAgICAiYXZnX21zIjogMjIuOQogICAgfSwKICAgICJvcGVuX2NoYW5uZWwiOiB7CiAgICAgICJuIjogNTAsCiAgICAgICJtaW5fbXMiOiAxMSwKICAgICAgInA1MF9tcyI6IDI0LjEsCiAgICAgICJwOTBfbXMiOiAzMC4zLAogICAgICAicDk1X21zIjogMzQuNiwKICAgICAgIm1heF9tcyI6IDQwLjksCiAgICAgICJhdmdfbXMiOiAyNC44CiAgICB9LAogICAgImVycm9ycyI6IDAsCiAgICAiZXJyb3JfcmF0ZSI6IDAsCiAgICAidGhyb3VnaHB1dF9ycHMiOiAxOTYuMjQKICB9Cn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "99f026b301af5204cfec-bd8be58c0c59b3697f76",
+          "file": "nfr/nfr-01-performance.spec.ts",
+          "line": 24,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "nfr/nfr-02-security.spec.ts",
+      "file": "nfr/nfr-02-security.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "NFR-02 [Security] Private-channel content and privileged operations restricted to authorized users @nfr @memberC",
+          "ok": true,
+          "tags": [
+            "nfr",
+            "memberC"
+          ],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [
+                {
+                  "type": "requirement",
+                  "description": "NFR-02"
+                },
+                {
+                  "type": "owner",
+                  "description": "Muhammad Huzaifa (Member 3)"
+                },
+                {
+                  "type": "technique",
+                  "description": "Measurement (authorization probes)"
+                },
+                {
+                  "type": "inputs",
+                  "description": "non-member, removed member, regular user vs admin APIs, no/forged session"
+                },
+                {
+                  "type": "actual",
+                  "description": "22/22 unauthorized requests denied (100%)"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 595,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T07:47:05.320Z",
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "NFR-02"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Muhammad Huzaifa (Member 3)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "Measurement (authorization probes)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "non-member, removed member, regular user vs admin APIs, no/forged session"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "22/22 unauthorized requests denied (100%)"
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "NFR-02-measurement",
+                      "contentType": "application/json",
+                      "body": "ewogICJpZCI6ICJORlItMDIiLAogICJtZXRyaWMiOiAiU2hhcmUgb2YgdW5hdXRob3JpemVkIHJlcXVlc3RzIGRlbmllZCAobm9uLW1lbWJlciwgcmVtb3ZlZCBtZW1iZXIsIHJlZ3VsYXIgdXNlciBvbiBhZG1pbiBvcGVyYXRpb25zLCBuby9mb3JnZWQgc2Vzc2lvbikiLAogICJjb25kaXRpb25zIjogewogICAgInByb2JlcyI6IDIyLAogICAgInJlbW92ZWRfbWVtYmVyX3Byb2JlZF93aXRoaW5fbXMiOiAzNCwKICAgICJzZXJ2ZXIiOiAiaHR0cDovL2xvY2FsaG9zdDo4MDY1IiwKICAgICJ2ZXJzaW9uIjogIjEyLjEuMC40MTk5NjczMTE5My43MzM3ZThmOTE5YzcyNmJhYTZiZjk1OTQyMWIwNzg5ZTVlMTAzZjA1N2JmNTRiNjJkNzU4NzEzMjc5YmNjOGUxLmZhbHNlIgogIH0sCiAgInRocmVzaG9sZCI6IHsKICAgICJkZW5pZWRfcGN0X21pbiI6IDEwMAogIH0sCiAgIm1lYXN1cmVkIjogewogICAgImRlbmllZCI6IDIyLAogICAgInRvdGFsIjogMjIsCiAgICAiZGVuaWVkX3BjdCI6IDEwMAogIH0sCiAgImRldGFpbHMiOiBbCiAgICB7CiAgICAgICJncm91cCI6ICJHMSBub24tbWVtYmVyIChldmUpIiwKICAgICAgImNoZWNrIjogIkdFVCBjaGFubmVsIChkaXJlY3QgbGluaykiLAogICAgICAic3RhdHVzIjogNDAzLAogICAgICAiZGVuaWVkIjogdHJ1ZQogICAgfSwKICAgIHsKICAgICAgImdyb3VwIjogIkcxIG5vbi1tZW1iZXIgKGV2ZSkiLAogICAgICAiY2hlY2siOiAiR0VUIGNoYW5uZWwgcG9zdHMiLAogICAgICAic3RhdHVzIjogNDAzLAogICAgICAiZGVuaWVkIjogdHJ1ZQogICAgfSwKICAgIHsKICAgICAgImdyb3VwIjogIkcxIG5vbi1tZW1iZXIgKGV2ZSkiLAogICAgICAiY2hlY2siOiAiR0VUIHNpbmdsZSBwb3N0IGJ5IGlkIiwKICAgICAgInN0YXR1cyI6IDQwMywKICAgICAgImRlbmllZCI6IHRydWUKICAgIH0sCiAgICB7CiAgICAgICJncm91cCI6ICJHMSBub24tbWVtYmVyIChldmUpIiwKICAgICAgImNoZWNrIjogIkRvd25sb2FkIGF0dGFjaGVkIGZpbGUiLAogICAgICAic3RhdHVzIjogNDAzLAogICAgICAiZGVuaWVkIjogdHJ1ZQogICAgfSwKICAgIHsKICAgICAgImdyb3VwIjogIkcxIG5vbi1tZW1iZXIgKGV2ZSkiLAogICAgICAiY2hlY2siOiAiUE9TVCBtZXNzYWdlIGludG8gY2hhbm5lbCIsCiAgICAgICJzdGF0dXMiOiA0MDMsCiAgICAgICJkZW5pZWQiOiB0cnVlCiAgICB9LAogICAgewogICAgICAiZ3JvdXAiOiAiRzEgbm9uLW1lbWJlciAoZXZlKSIsCiAgICAgICJjaGVjayI6ICJTZWFyY2ggZm9yIGNoYW5uZWwga2V5d29yZCIsCiAgICAgICJzdGF0dXMiOiAiMCByZXN1bHRzIiwKICAgICAgImRlbmllZCI6IHRydWUKICAgIH0sCiAgICB7CiAgICAgICJncm91cCI6ICJHMiByZW1vdmVkIG1lbWJlciAoYm9iKSIsCiAgICAgICJjaGVjayI6ICJHRVQgY2hhbm5lbCAoZGlyZWN0IGxpbmspIiwKICAgICAgInN0YXR1cyI6IDQwMywKICAgICAgImRlbmllZCI6IHRydWUKICAgIH0sCiAgICB7CiAgICAgICJncm91cCI6ICJHMiByZW1vdmVkIG1lbWJlciAoYm9iKSIsCiAgICAgICJjaGVjayI6ICJHRVQgY2hhbm5lbCBwb3N0cyIsCiAgICAgICJzdGF0dXMiOiA0MDMsCiAgICAgICJkZW5pZWQiOiB0cnVlCiAgICB9LAogICAgewogICAgICAiZ3JvdXAiOiAiRzIgcmVtb3ZlZCBtZW1iZXIgKGJvYikiLAogICAgICAiY2hlY2siOiAiR0VUIHNpbmdsZSBwb3N0IGJ5IGlkIiwKICAgICAgInN0YXR1cyI6IDQwMywKICAgICAgImRlbmllZCI6IHRydWUKICAgIH0sCiAgICB7CiAgICAgICJncm91cCI6ICJHMiByZW1vdmVkIG1lbWJlciAoYm9iKSIsCiAgICAgICJjaGVjayI6ICJEb3dubG9hZCBhdHRhY2hlZCBmaWxlIiwKICAgICAgInN0YXR1cyI6IDQwMywKICAgICAgImRlbmllZCI6IHRydWUKICAgIH0sCiAgICB7CiAgICAgICJncm91cCI6ICJHMiByZW1vdmVkIG1lbWJlciAoYm9iKSIsCiAgICAgICJjaGVjayI6ICJQT1NUIG1lc3NhZ2UgaW50byBjaGFubmVsIiwKICAgICAgInN0YXR1cyI6IDQwMywKICAgICAgImRlbmllZCI6IHRydWUKICAgIH0sCiAgICB7CiAgICAgICJncm91cCI6ICJHMiByZW1vdmVkIG1lbWJlciAoYm9iKSIsCiAgICAgICJjaGVjayI6ICJTZWFyY2ggZm9yIGNoYW5uZWwga2V5d29yZCIsCiAgICAgICJzdGF0dXMiOiAiMCByZXN1bHRzIiwKICAgICAgImRlbmllZCI6IHRydWUKICAgIH0sCiAgICB7CiAgICAgICJncm91cCI6ICJHMyByZWd1bGFyIHVzZXIgLT4gcHJpdmlsZWdlZCBvcCIsCiAgICAgICJjaGVjayI6ICJHRVQgc2VydmVyIGNvbmZpZyIsCiAgICAgICJzdGF0dXMiOiA0MDMsCiAgICAgICJkZW5pZWQiOiB0cnVlCiAgICB9LAogICAgewogICAgICAiZ3JvdXAiOiAiRzMgcmVndWxhciB1c2VyIC0+IHByaXZpbGVnZWQgb3AiLAogICAgICAiY2hlY2siOiAiUEFUQ0ggc2VydmVyIGNvbmZpZyIsCiAgICAgICJzdGF0dXMiOiA0MDMsCiAgICAgICJkZW5pZWQiOiB0cnVlCiAgICB9LAogICAgewogICAgICAiZ3JvdXAiOiAiRzMgcmVndWxhciB1c2VyIC0+IHByaXZpbGVnZWQgb3AiLAogICAgICAiY2hlY2siOiAiRGVhY3RpdmF0ZSBhbm90aGVyIHVzZXIiLAogICAgICAic3RhdHVzIjogNDAzLAogICAgICAiZGVuaWVkIjogdHJ1ZQogICAgfSwKICAgIHsKICAgICAgImdyb3VwIjogIkczIHJlZ3VsYXIgdXNlciAtPiBwcml2aWxlZ2VkIG9wIiwKICAgICAgImNoZWNrIjogIkRlbGV0ZSBwcml2YXRlIGNoYW5uZWwgbm90IGEgbWVtYmVyIG9mIiwKICAgICAgInN0YXR1cyI6IDQwMywKICAgICAgImRlbmllZCI6IHRydWUKICAgIH0sCiAgICB7CiAgICAgICJncm91cCI6ICJHNCBubyBzZXNzaW9uIiwKICAgICAgImNoZWNrIjogIkdFVCAvYXBpL3Y0L3VzZXJzL21lIiwKICAgICAgInN0YXR1cyI6IDQwMSwKICAgICAgImRlbmllZCI6IHRydWUKICAgIH0sCiAgICB7CiAgICAgICJncm91cCI6ICJHNCBubyBzZXNzaW9uIiwKICAgICAgImNoZWNrIjogIkdFVCAvYXBpL3Y0L2NoYW5uZWxzL3twcml2YXRlfSIsCiAgICAgICJzdGF0dXMiOiA0MDEsCiAgICAgICJkZW5pZWQiOiB0cnVlCiAgICB9LAogICAgewogICAgICAiZ3JvdXAiOiAiRzQgbm8gc2Vzc2lvbiIsCiAgICAgICJjaGVjayI6ICJHRVQgL2FwaS92NC9jaGFubmVscy97cHJpdmF0ZX0vcG9zdHMiLAogICAgICAic3RhdHVzIjogNDAxLAogICAgICAiZGVuaWVkIjogdHJ1ZQogICAgfSwKICAgIHsKICAgICAgImdyb3VwIjogIkc0IGZvcmdlZCB0b2tlbiIsCiAgICAgICJjaGVjayI6ICJHRVQgL2FwaS92NC91c2Vycy9tZSIsCiAgICAgICJzdGF0dXMiOiA0MDEsCiAgICAgICJkZW5pZWQiOiB0cnVlCiAgICB9LAogICAgewogICAgICAiZ3JvdXAiOiAiRzQgZm9yZ2VkIHRva2VuIiwKICAgICAgImNoZWNrIjogIkdFVCAvYXBpL3Y0L2NoYW5uZWxzL3twcml2YXRlfSIsCiAgICAgICJzdGF0dXMiOiA0MDEsCiAgICAgICJkZW5pZWQiOiB0cnVlCiAgICB9LAogICAgewogICAgICAiZ3JvdXAiOiAiRzQgZm9yZ2VkIHRva2VuIiwKICAgICAgImNoZWNrIjogIkdFVCAvYXBpL3Y0L2NoYW5uZWxzL3twcml2YXRlfS9wb3N0cyIsCiAgICAgICJzdGF0dXMiOiA0MDEsCiAgICAgICJkZW5pZWQiOiB0cnVlCiAgICB9CiAgXQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7b18a4ac7b741eca169d-a23cc8a4b6c63a670bcc",
+          "file": "nfr/nfr-02-security.spec.ts",
+          "line": 18,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "nfr/nfr-03-usability.spec.ts",
+      "file": "nfr/nfr-03-usability.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "NFR-03 [Usability] No critical accessibility violations; send-message task within time limit @nfr @memberA",
+          "ok": false,
+          "tags": [
+            "nfr",
+            "memberA"
+          ],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [
+                {
+                  "type": "requirement",
+                  "description": "NFR-03"
+                },
+                {
+                  "type": "owner",
+                  "description": "Aimen (Member 1)"
+                },
+                {
+                  "type": "technique",
+                  "description": "Measurement (axe-core scan + task timing)"
+                },
+                {
+                  "type": "inputs",
+                  "description": "pages: /signup_user_complete, /login, channel view; tags wcag2a,wcag2aa,wcag21a,wcag21aa; 3 timed send-message tasks"
+                },
+                {
+                  "type": "actual",
+                  "description": "critical: signup 1, login 0, channel 1 (serious: 1/1/2); task median 2813 ms [2813, 2754, 2829]"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 23180,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m0\u001b[39m\nReceived:    \u001b[31m2\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m0\u001b[39m\nReceived:    \u001b[31m2\u001b[39m\n    at /workspaces/sqa-a2-mattermost-tests-/tests/nfr/nfr-03-usability.spec.ts:69:20",
+                    "location": {
+                      "file": "/workspaces/sqa-a2-mattermost-tests-/tests/nfr/nfr-03-usability.spec.ts",
+                      "column": 20,
+                      "line": 69
+                    },
+                    "snippet": " \u001b[90m 67 |\u001b[39m   actual(\u001b[32m`critical: signup ${signup.byImpact.critical}, login ${login.byImpact.critical}, channel ${channel.byImpact.critical} (serious: ${signup.byImpact.serious}/${login.byImpact.serious}/${channel.byImpact.serious}); task median ${medianMs} ms [${timings.join(', ')}]`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 68 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 69 |\u001b[39m   expect(critical)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(t\u001b[33m.\u001b[39mmax_critical)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 70 |\u001b[39m   expect(medianMs)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(t\u001b[33m.\u001b[39mtask_median_ms_max)\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 72 |\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspaces/sqa-a2-mattermost-tests-/tests/nfr/nfr-03-usability.spec.ts",
+                        "column": 20,
+                        "line": 69
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m0\u001b[39m\nReceived:    \u001b[31m2\u001b[39m\n\n \u001b[90m 67 |\u001b[39m   actual(\u001b[32m`critical: signup ${signup.byImpact.critical}, login ${login.byImpact.critical}, channel ${channel.byImpact.critical} (serious: ${signup.byImpact.serious}/${login.byImpact.serious}/${channel.byImpact.serious}); task median ${medianMs} ms [${timings.join(', ')}]`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 68 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 69 |\u001b[39m   expect(critical)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(t\u001b[33m.\u001b[39mmax_critical)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 70 |\u001b[39m   expect(medianMs)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(t\u001b[33m.\u001b[39mtask_median_ms_max)\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 72 |\u001b[39m\n\u001b[2m    at /workspaces/sqa-a2-mattermost-tests-/tests/nfr/nfr-03-usability.spec.ts:69:20\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-22T07:47:05.993Z",
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "NFR-03"
+                    },
+                    {
+                      "type": "owner",
+                      "description": "Aimen (Member 1)"
+                    },
+                    {
+                      "type": "technique",
+                      "description": "Measurement (axe-core scan + task timing)"
+                    },
+                    {
+                      "type": "inputs",
+                      "description": "pages: /signup_user_complete, /login, channel view; tags wcag2a,wcag2aa,wcag21a,wcag21aa; 3 timed send-message tasks"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "critical: signup 1, login 0, channel 1 (serious: 1/1/2); task median 2813 ms [2813, 2754, 2829]"
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "NFR-03-measurement",
+                      "contentType": "application/json",
+                      "body": "ewogICJpZCI6ICJORlItMDMiLAogICJtZXRyaWMiOiAiQ3JpdGljYWwgYXhlLWNvcmUgV0NBRyAyLnggQS9BQSB2aW9sYXRpb25zIG9uIHNpZ24tdXAsIGxvZ2luIGFuZCBjaGFubmVsIHZpZXc7IG1lZGlhbiB0aW1lIHRvIG9wZW4gYSBjaGFubmVsIGFuZCBzZW5kIGEgbWVzc2FnZSIsCiAgImNvbmRpdGlvbnMiOiB7CiAgICAidG9vbCI6ICJheGUtY29yZSB2aWEgQGF4ZS1jb3JlL3BsYXl3cmlnaHQiLAogICAgInRhZ3MiOiBbCiAgICAgICJ3Y2FnMmEiLAogICAgICAid2NhZzJhYSIsCiAgICAgICJ3Y2FnMjFhIiwKICAgICAgIndjYWcyMWFhIgogICAgXSwKICAgICJicm93c2VyIjogIkNocm9taXVtIDEzNjZ4NzY4IiwKICAgICJ0YXNrIjogIm9wZW4gY2hhbm5lbCArIHNlbmQgbWVzc2FnZSAoMyBhdHRlbXB0cykiLAogICAgInNlcnZlciI6ICJodHRwOi8vbG9jYWxob3N0OjgwNjUiLAogICAgInZlcnNpb24iOiAiMTIuMS4wLjQxOTk2NzMxMTkzLjczMzdlOGY5MTljNzI2YmFhNmJmOTU5NDIxYjA3ODllNWUxMDNmMDU3YmY1NGI2MmQ3NTg3MTMyNzliY2M4ZTEuZmFsc2UiCiAgfSwKICAidGhyZXNob2xkIjogewogICAgIm1heF9jcml0aWNhbCI6IDAsCiAgICAidGFza19tZWRpYW5fbXNfbWF4IjogNTAwMAogIH0sCiAgIm1lYXN1cmVkIjogewogICAgImNyaXRpY2FsX3RvdGFsIjogMiwKICAgICJzaWdudXAiOiB7CiAgICAgICJ0b3RhbCI6IDIsCiAgICAgICJieUltcGFjdCI6IHsKICAgICAgICAiY3JpdGljYWwiOiAxLAogICAgICAgICJzZXJpb3VzIjogMSwKICAgICAgICAibW9kZXJhdGUiOiAwLAogICAgICAgICJtaW5vciI6IDAKICAgICAgfSwKICAgICAgInJ1bGVzIjogWwogICAgICAgIHsKICAgICAgICAgICJpZCI6ICJjb2xvci1jb250cmFzdCIsCiAgICAgICAgICAiaW1wYWN0IjogInNlcmlvdXMiLAogICAgICAgICAgIm5vZGVzIjogMSwKICAgICAgICAgICJoZWxwIjogIkVsZW1lbnRzIG11c3QgbWVldCBtaW5pbXVtIGNvbG9yIGNvbnRyYXN0IHJhdGlvIHRocmVzaG9sZHMiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAiaWQiOiAiaW1hZ2UtYWx0IiwKICAgICAgICAgICJpbXBhY3QiOiAiY3JpdGljYWwiLAogICAgICAgICAgIm5vZGVzIjogMiwKICAgICAgICAgICJoZWxwIjogIkltYWdlcyBtdXN0IGhhdmUgYWx0ZXJuYXRpdmUgdGV4dCIKICAgICAgICB9CiAgICAgIF0KICAgIH0sCiAgICAibG9naW4iOiB7CiAgICAgICJ0b3RhbCI6IDEsCiAgICAgICJieUltcGFjdCI6IHsKICAgICAgICAiY3JpdGljYWwiOiAwLAogICAgICAgICJzZXJpb3VzIjogMSwKICAgICAgICAibW9kZXJhdGUiOiAwLAogICAgICAgICJtaW5vciI6IDAKICAgICAgfSwKICAgICAgInJ1bGVzIjogWwogICAgICAgIHsKICAgICAgICAgICJpZCI6ICJsYWJlbC1jb250ZW50LW5hbWUtbWlzbWF0Y2giLAogICAgICAgICAgImltcGFjdCI6ICJzZXJpb3VzIiwKICAgICAgICAgICJub2RlcyI6IDEsCiAgICAgICAgICAiaGVscCI6ICJFbGVtZW50cyBtdXN0IGhhdmUgdGhlaXIgdmlzaWJsZSB0ZXh0IGFzIHBhcnQgb2YgdGhlaXIgYWNjZXNzaWJsZSBuYW1lIgogICAgICAgIH0KICAgICAgXQogICAgfSwKICAgICJjaGFubmVsIjogewogICAgICAidG90YWwiOiAzLAogICAgICAiYnlJbXBhY3QiOiB7CiAgICAgICAgImNyaXRpY2FsIjogMSwKICAgICAgICAic2VyaW91cyI6IDIsCiAgICAgICAgIm1vZGVyYXRlIjogMCwKICAgICAgICAibWlub3IiOiAwCiAgICAgIH0sCiAgICAgICJydWxlcyI6IFsKICAgICAgICB7CiAgICAgICAgICAiaWQiOiAiYXJpYS1hbGxvd2VkLWF0dHIiLAogICAgICAgICAgImltcGFjdCI6ICJjcml0aWNhbCIsCiAgICAgICAgICAibm9kZXMiOiAxLAogICAgICAgICAgImhlbHAiOiAiRWxlbWVudHMgbXVzdCBvbmx5IHVzZSBzdXBwb3J0ZWQgQVJJQSBhdHRyaWJ1dGVzIgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgImlkIjogImxhYmVsLWNvbnRlbnQtbmFtZS1taXNtYXRjaCIsCiAgICAgICAgICAiaW1wYWN0IjogInNlcmlvdXMiLAogICAgICAgICAgIm5vZGVzIjogMywKICAgICAgICAgICJoZWxwIjogIkVsZW1lbnRzIG11c3QgaGF2ZSB0aGVpciB2aXNpYmxlIHRleHQgYXMgcGFydCBvZiB0aGVpciBhY2Nlc3NpYmxlIG5hbWUiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAiaWQiOiAibmVzdGVkLWludGVyYWN0aXZlIiwKICAgICAgICAgICJpbXBhY3QiOiAic2VyaW91cyIsCiAgICAgICAgICAibm9kZXMiOiAxLAogICAgICAgICAgImhlbHAiOiAiSW50ZXJhY3RpdmUgY29udHJvbHMgbXVzdCBub3QgYmUgbmVzdGVkIgogICAgICAgIH0KICAgICAgXQogICAgfSwKICAgICJ0YXNrX3RpbWluZ3NfbXMiOiBbCiAgICAgIDI4MTMsCiAgICAgIDI3NTQsCiAgICAgIDI4MjkKICAgIF0sCiAgICAidGFza19tZWRpYW5fbXMiOiAyODEzCiAgfQp9"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/video-1.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/video-2.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/video-3.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspaces/sqa-a2-mattermost-tests-/reports/full/artifacts/nfr-nfr-03-usability-NFR-0-3545a-thin-time-limit-nfr-memberA-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspaces/sqa-a2-mattermost-tests-/tests/nfr/nfr-03-usability.spec.ts",
+                    "column": 20,
+                    "line": 69
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "77cf7068abcb2be80a60-477da732aaad3db7a7aa",
+          "file": "nfr/nfr-03-usability.spec.ts",
+          "line": 27,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-22T07:46:15.619Z",
+    "duration": 75116.421,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

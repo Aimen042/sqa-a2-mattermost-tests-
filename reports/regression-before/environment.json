@@ -1,0 +1,10 @@
+{
+  "run": "regression-before",
+  "startedAt": "2026-11-22T07:52:36.776Z",
+  "baseUrl": "http://localhost:8065",
+  "mattermostVersion": "12.1.0.41996731193.7337e8f919c726baa6bf959421b0789e5e103f057bf54b62d758713279bcc8e1.false",
+  "maxFileSizeBytes": 1048576,
+  "passwordMinLength": 8,
+  "node": "v24.22.2",
+  "platform": "linux x64"
+}

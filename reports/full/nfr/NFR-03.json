@@ -1,0 +1,99 @@
+{
+  "id": "NFR-03",
+  "metric": "Critical axe-core WCAG 2.x A/AA violations on sign-up, login and channel view; median time to open a channel and send a message",
+  "conditions": {
+    "tool": "axe-core via @axe-core/playwright",
+    "tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa"
+    ],
+    "browser": "Chromium 1366x768",
+    "task": "open channel + send message (3 attempts)",
+    "server": "http://localhost:8065",
+    "version": "12.1.0.41996731193.7337e8f919c726baa6bf959421b0789e5e103f057bf54b62d758713279bcc8e1.false"
+  },
+  "threshold": {
+    "max_critical": 0,
+    "task_median_ms_max": 5000
+  },
+  "measured": {
+    "critical_total": 2,
+    "signup": {
+      "total": 2,
+      "byImpact": {
+        "critical": 1,
+        "serious": 1,
+        "moderate": 0,
+        "minor": 0
+      },
+      "rules": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 1,
+          "help": "Elements must meet minimum color contrast ratio thresholds"
+        },
+        {
+          "id": "image-alt",
+          "impact": "critical",
+          "nodes": 2,
+          "help": "Images must have alternative text"
+        }
+      ]
+    },
+    "login": {
+      "total": 1,
+      "byImpact": {
+        "critical": 0,
+        "serious": 1,
+        "moderate": 0,
+        "minor": 0
+      },
+      "rules": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "nodes": 1,
+          "help": "Elements must have their visible text as part of their accessible name"
+        }
+      ]
+    },
+    "channel": {
+      "total": 3,
+      "byImpact": {
+        "critical": 1,
+        "serious": 2,
+        "moderate": 0,
+        "minor": 0
+      },
+      "rules": [
+        {
+          "id": "aria-allowed-attr",
+          "impact": "critical",
+          "nodes": 1,
+          "help": "Elements must only use supported ARIA attributes"
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "nodes": 3,
+          "help": "Elements must have their visible text as part of their accessible name"
+        },
+        {
+          "id": "nested-interactive",
+          "impact": "serious",
+          "nodes": 1,
+          "help": "Interactive controls must not be nested"
+        }
+      ]
+    },
+    "task_timings_ms": [
+      2813,
+      2754,
+      2829
+    ],
+    "task_median_ms": 2813
+  }
+}

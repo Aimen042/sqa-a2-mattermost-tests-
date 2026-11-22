@@ -1,0 +1,40 @@
+{
+  "id": "NFR-01",
+  "metric": "Response time of common operations: search (POST /teams/{id}/posts/search) and open channel (GET channel + GET latest 60 posts)",
+  "conditions": {
+    "virtual_users": 5,
+    "iterations_per_user": 10,
+    "samples_per_operation": 50,
+    "seeded_posts": 20,
+    "server": "http://localhost:8065",
+    "version": "12.1.0.41996731193.7337e8f919c726baa6bf959421b0789e5e103f057bf54b62d758713279bcc8e1.false"
+  },
+  "threshold": {
+    "search_p95_ms_max": 1000,
+    "open_channel_p95_ms_max": 1000,
+    "error_rate_max": 0
+  },
+  "measured": {
+    "search": {
+      "n": 50,
+      "min_ms": 13.2,
+      "p50_ms": 21.6,
+      "p90_ms": 32.8,
+      "p95_ms": 33,
+      "max_ms": 38.7,
+      "avg_ms": 22.9
+    },
+    "open_channel": {
+      "n": 50,
+      "min_ms": 11,
+      "p50_ms": 24.1,
+      "p90_ms": 30.3,
+      "p95_ms": 34.6,
+      "max_ms": 40.9,
+      "avg_ms": 24.8
+    },
+    "errors": 0,
+    "error_rate": 0,
+    "throughput_rps": 196.24
+  }
+}

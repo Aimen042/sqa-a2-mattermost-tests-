@@ -1,0 +1,59 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="18.966193">
+<testsuite name="e2e/e2e-critical-workflow.spec.ts" timestamp="2026-11-22T07:52:36.867Z" hostname="chromium" tests="1" failures="0" skipped="0" time="16.915" errors="0">
+<testcase name="E2E-01 Critical workflow: send a message in a private channel (login -&gt; open -&gt; send -&gt; view -&gt; search/reply) @e2e @fr05" classname="e2e/e2e-critical-workflow.spec.ts" time="16.915">
+<properties>
+<property name="requirement" value="FR-01, FR-02, FR-03, FR-04, FR-05 (+NFR-02)">
+</property>
+<property name="owner" value="Aimen, Bakhtawar, Muhammad Huzaifa">
+</property>
+<property name="technique" value="End-to-end scenario (A1 critical workflow)">
+</property>
+<property name="inputs" value="keyword=e2emwrjhfdmwhya7; file=e2e-e2emwrjhfdmwhya7.txt">
+</property>
+<property name="actual" value="All steps passed: channel qa-e2e-mwrjhfim3xqd, post gmc6db373brumcg8b76s1gqimc viewed by member, found by search, replied (thread of 2), non-member denied">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/attachments/e2e-step5-alice-sent-b5600e4795b7673385e1af74e9360e8bd0f97bc5.png]]
+
+[[ATTACHMENT|artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/attachments/e2e-step6-bob-views-32e921a616eab38f601957855febff66d503cc64.png]]
+
+[[ATTACHMENT|artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|artifacts/e2e-e2e-critical-workflow--cd3b5-iew---search-reply-e2e-fr05-chromium/test-finished-2.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="module-c-channels-files.spec.ts" timestamp="2026-11-22T07:52:36.867Z" hostname="chromium" tests="2" failures="0" skipped="0" time="0.522" errors="0">
+<testcase name="Module C - Channels &amp; File Sharing › TC-C03 [FR-05][BVA] File size: exactly max accepted, max+1 byte rejected @fr05 @memberC" classname="module-c-channels-files.spec.ts" time="0.194">
+<properties>
+<property name="requirement" value="FR-05">
+</property>
+<property name="owner" value="Muhammad Huzaifa (Member 3)">
+</property>
+<property name="technique" value="BVA - max (1048576 B) and max+1 (1048577 B)">
+</property>
+<property name="inputs" value="binary files of 1048576 and 1048577 bytes">
+</property>
+<property name="actual" value="MaxFileSize=1048576; 1048576 B -&gt; HTTP 201; 1048577 B -&gt; HTTP 413 api.file.upload_file.too_large_detailed.app_error">
+</property>
+</properties>
+</testcase>
+<testcase name="Module C - Channels &amp; File Sharing › TC-C04 [FR-05][EP-valid] File attached to a message is downloaded unchanged by another member @fr05 @memberC" classname="module-c-channels-files.spec.ts" time="0.328">
+<properties>
+<property name="requirement" value="FR-05">
+</property>
+<property name="owner" value="Muhammad Huzaifa (Member 3)">
+</property>
+<property name="technique" value="EP - valid partition (supported file within size limit)">
+</property>
+<property name="inputs" value="notes.txt (42 B)">
+</property>
+<property name="actual" value="Upload 201 (42 B), post 201 with file id, member sees name &quot;notes.txt&quot; and downloads identical content (200)">
+</property>
+</properties>
+</testcase>
+</testsuite>
+</testsuites>
